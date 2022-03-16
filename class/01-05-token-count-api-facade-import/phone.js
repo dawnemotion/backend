@@ -31,4 +31,6 @@ export const sendTokneToSMS = () => {
     console.log(myphone + "번호로 인증번호" + result + "를 전송합니다.")
 }
 
+
+
  
