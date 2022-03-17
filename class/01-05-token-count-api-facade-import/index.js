@@ -1,13 +1,13 @@
-import {checkValidationPhone, getToken, sendTokneToSMS} from './phone.js'
+import {checkValidationPhone, getToken, sendTokenToSMS} from './phone.js'
 
-const createTokenOfPhone = () => {
+const createTokenOfPhone = (myphone) => {
 
-    const isValid = checkValidationPhone()
+    const isValid = checkValidationPhone(myphone)
     if(isValid){
 
         getToken()
 
-        sendTokneToSMS()
+        sendTokenToSMS(myphone,result)
     }
 }
 
