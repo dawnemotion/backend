@@ -20,7 +20,7 @@ export const checkValidationNumber = (number) => {
 //         - 그렇지 않을 경우 에러를 출력해주세요. (”에러발생!!! 형식이 올바르지 않습니다!!!”)
 
 export const checkDash = (number) => {
-    const numberDash = includes("-");
+    const numberDash = number.includes("-");
     if(numberDash === false){
         console.log("에러발생!!! 형식이 올바르지 않습니다!!")
         return 

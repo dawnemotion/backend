@@ -1,28 +1,27 @@
-import { ApolloServer, gql } from 'apollo-server'
+import { ApolloServer, gql } from 'apollo-server';
 
-
-
-const myResolvers = {
-    Query: {
-      hello: () => 'world',
-    },
-  };
-
-
-const myTypeDefs = gql`
+// The GraphQL schema
+const typeDefs = gql`
   type Query {
     "A simple type for getting started!"
+    
     hello: String
+    fetchBoradsCount:Int!
   }
 `;
 
-
-
+// A map of functions which return data for the schema.
+const resolvers = {
+  Query: {
+    hello: () => 'world',
+  },
+};
 
 const server = new ApolloServer({
-    typeDefs: myTypeDefs,
-    resolvers: myResolvers
-})
+  typeDefs,
+  resolvers
+});
 
-
-server.listen(3000)
+server.listen(3001).then(({ url }) => {
+  console.log(`🚀 Server ready at ${url}`);
+});
