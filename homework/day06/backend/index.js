@@ -3,13 +3,14 @@ import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
 import { options } from "./swaggers/config.js"
 import cors from 'cors'
+import dotenv from 'dotenv'
+import {checkValidationPhone,getToken,sendToSms} from './phone.js'
+import {checkValidationEmail,getWelcomeTemplate,sendToEmail} from './user.js'
 
-
-
+dotenv.config()
 const app = express();
 // app이 app.use보다 상위에 위치해있어야한다. 위에서부터 아래로 연산하기때문에.
 app.use(cors())
-
 app.use(express.json());
 // app을 요청할때 JSON으로 변경
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJsdoc(options)));
@@ -74,5 +75,29 @@ app.get("/starbucks", function (req, res) {
   ];
   res.send(coffee);
 });
+
+app.post('/tokens/phone', (req, res)=>{
+  const myphone = req.body.phone
+  const isValid = checkValidationPhone(myphone)
+    if(isValid){
+        // 2. 핸드폰 토큰 6자리 만들기
+        const token = getToken()
+        // 3. 핸드폰으로 토큰 전송하기
+        sendToSms(myphone,token)
+        res.send("인증완료")
+    }
+})
+
+app.post('/users', (req,res) => {
+  const myuser = req.body.user
+  const isValid = checkValidationEmail(myuser.email)
+  if(isValid){
+      // 2. 가입환영 템플릿 만들기
+      const template = getWelcomeTemplate(myuser)
+      // 3. 이메일에 가입환영 템플릿 전송하기
+      sendToEmail(myuser.email,template)
+  }
+})
+
 
 app.listen(3000);
