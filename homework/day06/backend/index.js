@@ -90,12 +90,12 @@ app.post('/tokens/phone', (req, res)=>{
 
 app.post('/users', (req,res) => {
   const myuser = req.body.user
-  const isValid = checkValidationEmail(myuser.email)
+  const isValid = checkValidationEmail(myuser.jEmail)
   if(isValid){
       // 2. 가입환영 템플릿 만들기
       const template = getWelcomeTemplate(myuser)
       // 3. 이메일에 가입환영 템플릿 전송하기
-      sendToEmail(myuser.email,template)
+      sendToEmail(myuser.jEmail,template)
   }
 })
 

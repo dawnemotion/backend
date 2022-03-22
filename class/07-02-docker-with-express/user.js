@@ -18,18 +18,17 @@ dotenv.config()
 
     export const getWelcomeTemplate = (user) => {
     
-        const {jName, jPeopleNumber, myphone, jFavoriteSite, jPassword, jEmail } = user
+        const {name, age, school, email, password} = user
 
         return `
             <html>
                 <body>
-                    <h1>${jEmail}님 가입을 환영합니다!!!</h1>
+                    <h1>${email}님 가입을 환영합니다!!!</h1>
                     <hr />
-                    <div>이름: ${jName}</div>
-                    <div>주민등록번호: ${jPeopleNumber}</div>
-                    <div>핸드폰번호: ${myphone}</div>
-                    <div style="color:red">좋아하는사이트: ${jFavoriteSite}</div>
-                    <div>비밀번호: ${jPassword}</div>
+                    <div>이름: ${name}</div>
+                    <div>나이: ${age}</div>
+                    <div>학교: ${school}</div>
+                    <div>비밀번호: ${password}</div>
                     <div>가입일: ${getToday()}</div>
                 </body>
             </html>
