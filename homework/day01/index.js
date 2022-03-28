@@ -3,9 +3,9 @@
 
 import {checkValidationNumber,checkDash,masking} from './resident-registration-number1.js' 
 
-const PeopleNumber = (number) => {
+export const PeopleNumber = (personal) => {
     
-    const isValid = checkValidationNumber(number)
+    const isValid = checkValidationNumber(personal)
     if(isValid){
         checkDash()
 

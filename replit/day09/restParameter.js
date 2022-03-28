@@ -3,17 +3,24 @@
 //RestParameter를 사용해주세요.
 function sum4(...args){
   let total =  0;
-  
+  // 총 값
+  console.log(args)
+
+  return args.reduce((acc,cur) => { 
+      return acc+cur
+  },0)
+
+
   // for문
   // for(let i = 0; i < args.length;i++)
     // total += args[i]
 
   // forof문
-  for(let sum of args){
-    total += sum
-  }
+  // for(let sum of args){
+  //   total += sum
+  // }
   
-  return total
+  // return total
 }
 // sum4(5,7,2)
 

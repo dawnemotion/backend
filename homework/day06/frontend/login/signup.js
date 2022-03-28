@@ -13,7 +13,6 @@ const getValidationNumber = async () => {
 
 // 회원 가입 API 요청
 const submitSignup = async () => {
-  console.log('회원 가입 이메일 전송')
   const myphone01 = document.getElementById("PhoneNumber01").value
   const myphone02 = document.getElementById("PhoneNumber02").value
   const myphone03 = document.getElementById("PhoneNumber03").value
@@ -26,4 +25,5 @@ const submitSignup = async () => {
   const user = {myphone,jName,jPeopleNumber,jFavoriteSite,jPassword,jEmail}
 
   await axios.post('http://localhost:3000/users',{user})
+  console.log('회원 가입 이메일 전송')
 }

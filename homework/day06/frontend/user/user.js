@@ -10,10 +10,6 @@ const getUser = () => {
             }})
 }
 
-// console.log로 이 부분을 콘솔로 찍어보는데 잘 나오는데
-// res부분에서 받아온 데이터를 바깥으로 꺼내서 ()인자부분에 어떻게넣을지 잘 모르겠습니다.
-// data를 프론트에서 만든 규격에 맞추어 넣어줘야하는데 이부분을 잘 모르겠습니다.
-
 const createUserDiv = (data) => {
   const userTableItem = document.createElement('div')
   userTableItem.className = 'User_Table_Item'

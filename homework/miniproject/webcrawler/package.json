@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mongoose": "^6.2.8",
+    "puppeteer": "^13.5.1"
+  },
+  "name": "webcrawler",
+  "version": "yarn init",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module"
+}
