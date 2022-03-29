@@ -18,3 +18,4 @@ function solution(num){
                                         }, num)
             return countReduce !==1 ? -1 :answer;
 }
+// dsasdasd
