@@ -18,10 +18,10 @@
  *                                  example: 01023340224
  *      responses:
  *          '200':
- *                  description: user의 _id 리턴
+ *                  description: 성공
  *                  content:
  *                       application/json:
  *                          schema:
  *                            type: string
- *                            example: 61ee1b7272a81036fc429a05
+ *                            example: 인증번호 전송 성공
  */

@@ -37,10 +37,10 @@
  *                                  example : 1234
  *      responses:
  *          '200':
- *                  description: user의 _id 리턴
+ *                  description: 회원가입성공
  *                  content:
  *                       application/json:
  *                          schema:
  *                            type: string
- *                            example: 61ee1b7272a81036fc429a05
+ *                            example: 회원가입 성공
  */
