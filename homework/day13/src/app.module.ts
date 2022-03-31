@@ -17,12 +17,12 @@ import { Starbucks } from './apis/starbucks/entities/starbucks.entities';
         }),
         TypeOrmModule.forRoot({
             type: 'mysql',
-            host: 'localhost',
+            host: 'my-database',
             port: 3306,
             username: 'root',
-            password: 'tnpwlsl12',
+            password: 'root',
             // 디비버에서 생성한 데이터베이스이름을 적어넣는다.
-            database: 'starbucks',
+            database: 'starbucksdocker',
             // entities 이 부분에는 스키마를 적용하는 부분 models === entities
             // entities작성 이후 import로 가지고 온다.
             entities: [Starbucks],
@@ -30,6 +30,7 @@ import { Starbucks } from './apis/starbucks/entities/starbucks.entities';
             synchronize: true,
             // 로그를 나타내준다.
             logging: true,
+            retryAttempts: 20,
         }),
     ],
     // controllers: [AppController],
