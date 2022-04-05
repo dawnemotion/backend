@@ -1,4 +1,4 @@
-// 타입 추론
+ls; // 타입 추론
 let aaa = "안녕하세요";
 aaa = 3;
 
@@ -69,10 +69,10 @@ let creatBoardinput1: IProfile = {
   school: "다람쥐초등학교",
 };
 
-let creatBoardinput2: IProfile ={
+let creatBoardinput2: IProfile = {
   name: "철수",
-  hobby: "수영"
-}
+  hobby: "수영",
+};
 
 profile.age = "8살";
 profile.school = 123;

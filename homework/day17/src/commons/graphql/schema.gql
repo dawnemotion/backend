@@ -1,0 +1,107 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Board {
+  number: Int!
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+type House {
+  house_id: String!
+  house_name: String!
+}
+
+type Location {
+  location_id: String!
+  location_Address: String!
+}
+
+type Lodgment {
+  lodgment_id: String!
+  lodgment_name: String!
+  lodgment_callnumber: Int!
+  lodgment_intro: String!
+  location: Location!
+}
+
+type Night {
+  night_id: String!
+  night_name: String!
+}
+
+type Room {
+  room_id: String!
+  room_name: String!
+}
+
+type Product {
+  id: String!
+  name: String!
+  description: String!
+  price: Int!
+  usedhour: Int!
+  usedpeople: Int!
+  isSoldOut: Boolean!
+  lodgment: Lodgment!
+  house: House!
+  night: Night!
+  room: Room!
+  productTags: [Product!]!
+}
+
+type MainArea {
+  main_area_id: String!
+  main_area_name: String!
+}
+
+type SubArea {
+  sub_area_id: String!
+  sub_area_name: String!
+  mainArea: MainArea!
+}
+
+type User {
+  user_id: String!
+  user_name: String!
+  user_phone: String!
+  user_age: Int!
+}
+
+type Query {
+  fecthBoards: [Board!]!
+  fetchProducts: [Product!]!
+  fetchProduct(id: String!): Product!
+}
+
+type Mutation {
+  createBoard(writer: String!, title: String!, contents: String!, createBoardInput: CreateBoardInput!): String!
+  createProduct(createProductInput: CreateProductInput!): Product!
+  updateProduct(id: String!, updateProductInput: UpdateProductInput!): Product!
+}
+
+input CreateBoardInput {
+  writer: String!
+  title: String!
+  contents: String!
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  price: Int!
+  usedhour: Int!
+  usedpeople: Int!
+  isSoldout: Boolean!
+}
+
+input UpdateProductInput {
+  name: String
+  description: String
+  price: Int
+  usedhour: Int
+  usedpeople: Int
+  isSoldout: Boolean
+}
