@@ -1,16 +1,28 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Location } from 'src/apis/location/entities/location.entity';
+import {
+    Column,
+    Entity,
+    JoinColumn,
+    OneToOne,
+    PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
-export class User {
+export class Lodgment {
     @PrimaryGeneratedColumn('uuid')
-    user_id: string;
+    lodgment_id: string;
 
     @Column()
-    user_name: string;
+    lodgment_name: string;
 
     @Column()
-    user_phone: number;
+    lodgment_callnumber: number;
 
     @Column()
-    user_age: number;
+    lodgment_intro: string;
+
+    // 1:1관계
+    @JoinColumn()
+    @OneToOne(() => Location)
+    location: Location;
 }

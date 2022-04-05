@@ -1,10 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Image {
+export class Location {
     @PrimaryGeneratedColumn('uuid')
-    Image_id: string;
+    location_id: string;
 
     @Column()
-    Image_Address: string;
+    location_Address: string;
 }
